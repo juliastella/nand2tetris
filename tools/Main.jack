@@ -1,0 +1,25 @@
+class Main {
+  function void main() {
+    do jogoPergunta("Quanto vale a soma: 2 + 2?", "4", 0);
+    do jogoPergunta("Quanto vale a soma: 1 + 1?", "2", 0);
+    return;
+  }
+
+  function void jogoPergunta(String perguntas, String resposta, int pontos) {
+    while (Keyboard.hasNext()) {
+      do Output.printString(perguntas);
+      var respostaRecebida: String;
+      var pontuacao: int;
+      let respostaRecebida = Keyboard.readString();
+      let pontuacao = 0;
+      if (respostaRecebida = resposta) {
+        let pontuacao = pontos + 1;
+        do Output.printString("Parabéns, você acertou, sua pontuação é de: '" + pontuacao + "'.\n");
+      } else {
+        let pontuacao = pontos - 1;
+        do Output.printString("Que pena, você errou. A resposta correta era: '" + resposta + "', sua pontuação é de: " + pontuacao + "'.\n");
+      }
+    }
+  }
+}
+
